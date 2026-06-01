@@ -18,8 +18,8 @@
   <circle cx="150" cy="75" r="70" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
   <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
   
-  <text x="152" y="93" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" opacity="0.35">COMING SOON</text>
-  <text x="150" y="91" font-family="Arial, sans-serif" font-size="40" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" filter="url(#glow)">COMING SOON</text>
+  <text x="152" y="93" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" opacity="0.35">COMING SOON</text>
+  <text x="150" y="91" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" filter="url(#glow)">COMING SOON</text>
   
   <line x1="20" y1="25" x2="280" y2="25" stroke="#ffeb3b" stroke-width="4" opacity="0.8" filter="url(#glow)"/>
   <line x1="20" y1="125" x2="280" y2="125" stroke="#ffeb3b" stroke-width="4" opacity="0.85" filter="url(#glow)"/>
