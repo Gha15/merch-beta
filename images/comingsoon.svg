@@ -1,52 +1,22 @@
-<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="glow" filterUnits="userSpaceOnUse" x="-50" y="-50" width="400" height="250">
-      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
   
-  <!-- Dark background - fills entire viewBox -->
-  <rect width="300" height="150" fill="#0d0d0d"/>
+  <rect width="400" height="200" fill="#1a1a1a"/>
   
-  <!-- Glow circles - properly scaled -->
-  <circle cx="150" cy="75" r="80" fill="none" stroke="#ffeb3b" stroke-width="0.5" opacity="0.03"/>
-  <circle cx="150" cy="75" r="65" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.06"/>
-  <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
-  <circle cx="150" cy="75" r="35" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
-  
-  <!-- Shadow text for depth -->
-  <text x="152" y="88" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" opacity="0.3">COMING SOON</text>
-  
-  <!-- Main glowing text - centered -->
-  <text x="150" y="86" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" filter="url(#glow)">COMING SOON</text>
-  
-  <!-- Top accent line -->
-  <line x1="30" y1="28" x2="270" y2="28" stroke="#ffeb3b" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
-  
-  <!-- Bottom accent line -->
-  <line x1="30" y1="122" x2="270" y2="122" stroke="#ffeb3b" stroke-width="3" opacity="0.85" filter="url(#glow)"/>
-  
-  <!-- Corner brackets - Top Left -->
-  <line x1="15" y1="15" x2="35" y2="15" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  <line x1="15" y1="15" x2="15" y2="35" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  
-  <!-- Corner brackets - Top Right -->
-  <line x1="285" y1="15" x2="265" y2="15" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  <line x1="285" y1="15" x2="285" y2="35" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  
-  <!-- Corner brackets - Bottom Left -->
-  <line x1="15" y1="135" x2="35" y2="135" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  <line x1="15" y1="135" x2="15" y2="115" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  
-  <!-- Corner brackets - Bottom Right -->
-  <line x1="285" y1="135" x2="265" y2="135" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  <line x1="285" y1="135" x2="285" y2="115" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
-  
-  <!-- Center neon dot -->
-  <circle cx="150" cy="75" r="2" fill="#ffeb3b" opacity="0.6" filter="url(#glow)"/>
+  <g stroke="#fce62f" stroke-width="4" fill="none" filter="url(#glow)" font-family="Arial, sans-serif" font-weight="bold" font-size="40">
+    <path d="M40 30 L20 30 L20 50 M360 30 L380 30 L380 50"/>
+    <path d="M40 170 L20 170 L20 150 M360 170 L380 170 L380 150"/>
+    <line x1="60" y1="30" x2="340" y2="30"/>
+    <line x1="60" y1="170" x2="340" y2="170"/>
+    
+    <text x="50%" y="115" text-anchor="middle" fill="#fce62f" font-size="45">COMING SOON</text>
+  </g>
 </svg>
