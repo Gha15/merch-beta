@@ -10,10 +10,10 @@
         letter-spacing: 4px;
       }
     </style>
-    <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <!-- Fixed: Set filterUnits to userSpaceOnUse and provided pixel coordinates to prevent clipping -->
+    <filter id="glow" filterUnits="userSpaceOnUse" x="-50" y="-50" width="400" height="250">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -29,8 +29,9 @@
   <circle cx="150" cy="75" r="70" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
   <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
   
-  <text x="152" y="90" class="coming-soon-text" font-size="56" opacity="0.35" letter-spacing="4">COMING SOON</text>
-  <text x="150" y="87" class="coming-soon-text" font-size="56" filter="url(#glow)">COMING SOON</text>
+  <!-- Fixed: Optimized font size and adjusted Y positions to keep everything in the viewport bounds -->
+  <text x="152" y="93" class="coming-soon-text" font-size="34" opacity="0.35">COMING SOON</text>
+  <text x="150" y="91" class="coming-soon-text" font-size="34" filter="url(#glow)">COMING SOON</text>
   
   <line x1="20" y1="25" x2="280" y2="25" stroke="#ffeb3b" stroke-width="4" opacity="0.8" filter="url(#glow)"/>
   <line x1="20" y1="125" x2="280" y2="125" stroke="#ffeb3b" stroke-width="4" opacity="0.85" filter="url(#glow)"/>
