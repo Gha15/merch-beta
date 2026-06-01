@@ -57,6 +57,13 @@ function opencategorywindowwithanxtoclose(category) {
         itemImage.src = imageUrl;
         itemImage.onerror = function() {
             this.src = 'images/comingsoon.svg';
+            // Apply responsive sizing when SVG loads as fallback
+            updateImageSizes();
+        };
+        
+        // Apply responsive sizing when image loads
+        itemImage.onload = function() {
+            updateImageSizes();
         };
         
         imageContainer.appendChild(itemImage);
@@ -73,6 +80,9 @@ function opencategorywindowwithanxtoclose(category) {
             showcustomalert('This item is not available yet!', 'ok');
         });
     });
+    
+    // Apply responsive sizing after items are created
+    updateImageSizes();
 }
 
 //custom alert function
@@ -103,12 +113,15 @@ function updateImageSizes() {
         if (windowWidth < 600) {
             // Mobile: smaller images
             img.style.maxHeight = '80px';
+            img.style.maxWidth = '80px';
         } else if (windowWidth < 1024) {
             // Tablet: medium images
             img.style.maxHeight = '120px';
+            img.style.maxWidth = '120px';
         } else {
             // Desktop: full size
             img.style.maxHeight = '150px';
+            img.style.maxWidth = '150px';
         }
     });
 }
