@@ -2,7 +2,6 @@ let windowwidth = '0px'
 let windowheight = '0px'
 let items = []
 function opencategorywindowwithanxtoclose(category) {
-    // FIXED: Added parentheses around the conditions
     if (category === 'pens') {
         items = ['I love matix fan pen', 'official matix logo pen'];
     } else if (category === 'shirts') {
@@ -10,7 +9,19 @@ function opencategorywindowwithanxtoclose(category) {
     }
     const categoryWindow = document.createElement('div');
     categoryWindow.classList.add('category-window');
+    
+    // SCALE TO FIT SCREEN: Apply base styling to window overlay
+    categoryWindow.style.position = 'fixed';
+    categoryWindow.style.top = '50%';
+    categoryWindow.style.left = '50%';
+    categoryWindow.style.transform = 'translate(-50%, -50%)';
+    categoryWindow.style.width = '0%';
+    categoryWindow.style.height = '0%';
+    categoryWindow.style.overflow = 'hidden';
+    categoryWindow.style.transition = 'width 0.5s ease, height 0.5s ease';
+    
     document.body.appendChild(categoryWindow);
+    
     const closeButton = document.createElement('button');
     closeButton.classList.add('x-close');
     closeButton.textContent = 'X';
@@ -18,6 +29,7 @@ function opencategorywindowwithanxtoclose(category) {
     closeButton.addEventListener('click', () => {
         categoryWindow.remove();
     });
+    
     const categoryContent = document.createElement('div');
     const categoryContenttext2 = document.createElement('div');
     categoryContent.classList.add('category-content');
@@ -26,47 +38,63 @@ function opencategorywindowwithanxtoclose(category) {
     categoryContent.appendChild(categoryContenttext2);
     categoryContenttext2.classList.add('category-subtitle');
     categoryContenttext2.textContent = 'if you press the items nothing will happen cause they are not real yet :)';
-    categoryContent.style.width = windowwidth;
-    categoryContent.style.height = windowheight;
-    categoryContent.style.width = '0px';
-    categoryContent.style.height = '0px';
-    categoryContent.style.transition = 'width 0.5s ease, height 0.5s ease';
+    
+    // SCALE TO FIT SCREEN: Content container expands completely inside window
+    categoryContent.style.width = '100%';
+    categoryContent.style.height = '100%';
+    categoryContent.style.boxSizing = 'border-box';
+    categoryContent.style.overflowY = 'auto'; // Allows scrolling on small screens
+    
     setTimeout(() => {
-        categoryWindow.style.width = '80%';
-        categoryContent.style.width = '80%';
-        categoryContent.style.height = '75%';
-        categoryWindow.style.height = '75%';
-        categoryContenttext2.style.width = '80%';
+        // SCALE TO FIT SCREEN: Responsive size boundaries for the main popup
+        if (window.innerWidth < 600) {
+            categoryWindow.style.width = '95%';
+            categoryWindow.style.height = '85%';
+        } else {
+            categoryWindow.style.width = '80%';
+            categoryWindow.style.height = '75%';
+        }
     }, 10);
 
-    //start on working on adding items to the category content
-    //drawing item boxes and adding item names to them
     items.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.classList.add('category-item');
+        
+        // SCALE TO FIT SCREEN: Use flexbox layouts for auto-adjusting item grids
+        itemElement.style.display = 'inline-flex';
+        itemElement.style.flexDirection = 'column';
+        itemElement.style.alignItems = 'center';
+        itemElement.style.margin = '10px';
+        itemElement.style.width = 'calc(50% - 20px)'; // Fits 2 columns on small screens safely
+        itemElement.style.minWidth = '140px';
+        
         categoryContent.appendChild(itemElement);
         
-        // Create image container
         const imageContainer = document.createElement('div');
         imageContainer.classList.add('item-image-container');
         
-        // Create image element
+        // SCALE TO FIT SCREEN: Force container to look proportional
+        imageContainer.style.width = '100%';
+        imageContainer.style.display = 'flex';
+        imageContainer.style.justifyContent = 'center';
+        
         const itemImage = document.createElement('img');
         itemImage.classList.add('item-image');
         
-        // Convert item name to filename (e.g., "I love matix fan pen" -> "i-love-matix-fan-pen.svg")
+        // FIT TO SCREEN: Force SVGs to scale proportionally inside container boundaries
+        itemImage.style.width = '100%';
+        itemImage.style.height = 'auto';
+        itemImage.style.objectFit = 'contain'; 
+        
         const imageName = item.toLowerCase().replace(/\s+/g, '-') + '.svg';
         const imageUrl = `images/${imageName}`;
         
-        // Set image source with fallback to coming soon SVG
         itemImage.src = imageUrl;
         itemImage.onerror = function() {
             this.src = 'images/comingsoon.svg';
-            // Apply responsive sizing when SVG loads as fallback
             updateImageSizes();
         };
         
-        // Apply responsive sizing when image loads
         itemImage.onload = function() {
             updateImageSizes();
         };
@@ -74,63 +102,76 @@ function opencategorywindowwithanxtoclose(category) {
         imageContainer.appendChild(itemImage);
         itemElement.appendChild(imageContainer);
         
-        // Create text container
         const textContainer = document.createElement('div');
         textContainer.classList.add('item-text-container');
         textContainer.textContent = item;
+        textContainer.style.textAlign = 'center';
+        textContainer.style.fontSize = 'clamp(0.8rem, 2vw, 1.1rem)'; // SCALE TO FIT SCREEN: Fluid text size
         itemElement.appendChild(textContainer);
         
-        categoryContent.appendChild(document.createElement('br'));
         itemElement.addEventListener('click', () => {
             showcustomalert('This item is not available yet!', 'OK');
         });
     });
     
-    // Apply responsive sizing after items are created
     updateImageSizes();
 }
 
-//custom alert function
 function showcustomalert(message, close_message) {
     const alertOverlay = document.createElement('div');
     alertOverlay.classList.add('alert-overlay');
+    
+    // SCALE TO FIT SCREEN: Responsive layout cover
+    alertOverlay.style.position = 'fixed';
+    alertOverlay.style.top = '0';
+    alertOverlay.style.left = '0';
+    alertOverlay.style.width = '100vw';
+    alertOverlay.style.height = '100vh';
+    alertOverlay.style.display = 'flex';
+    alertOverlay.style.justifyContent = 'center';
+    alertOverlay.style.alignItems = 'center';
+    
     document.body.appendChild(alertOverlay);
     const alertBox = document.createElement('div');
     alertBox.classList.add('alert-box');
     alertBox.textContent = message;
+    
+    // SCALE TO FIT SCREEN: Fluid alert sizing
+    alertBox.style.width = 'min(400px, 85%)';
+    alertBox.style.padding = '20px';
+    
     alertOverlay.appendChild(alertBox);
     const closeButton = document.createElement('button');
     closeButton.classList.add('alert-close');
     closeButton.classList.add('button');
-    closeButton.textContent = 'Close';
+    closeButton.textContent = close_message || 'Close';
     alertBox.appendChild(closeButton);
     closeButton.addEventListener('click', () => {
         document.body.removeChild(alertOverlay);
     });
 }
 
-// Handle responsive image scaling on window resize
+// FIT TO SCREEN: Calculates accurate vector limits relative to the user viewport width
 function updateImageSizes() {
     const itemImages = document.querySelectorAll('.item-image');
     const windowWidth = window.innerWidth;
     
     itemImages.forEach(img => {
         if (windowWidth < 600) {
-            // Mobile: smaller images
-            img.style.maxHeight = '80px';
-            img.style.maxWidth = '80px';
+            // Mobile: Scale bounded layout
+            img.style.maxHeight = '25vw';
+            img.style.maxWidth = '25vw';
         } else if (windowWidth < 1024) {
-            // Tablet: medium images
-            img.style.maxHeight = '120px';
-            img.style.maxWidth = '120px';
-        } else {
-            // Desktop: full size
+            // Tablet
             img.style.maxHeight = '150px';
             img.style.maxWidth = '150px';
+        } else {
+            // Desktop
+            img.style.maxHeight = '200px';
+            img.style.maxWidth = '200px';
         }
     });
 }
 
-// Update on load and resize
 window.addEventListener('load', updateImageSizes);
 window.addEventListener('resize', updateImageSizes);
