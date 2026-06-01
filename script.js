@@ -1,8 +1,12 @@
 let windowwidth = '0px'
 let windowheight = '0px'
-
+let items = []
 function opencategorywindowwithanxtoclose(category) {
-    const items = ['I love matix fan pen', 'official matix logo pen'];
+    if category === 'pens' {
+    items = ['I love matix fan pen', 'official matix logo pen'];
+    } else if category === 'shirts' {
+        items = ['Matix officil logo shirt', 'math signs shirt', 'multiplication table shirt with matix logo above it']
+    }
     const categoryWindow = document.createElement('div');
     categoryWindow.classList.add('category-window');
     document.body.appendChild(categoryWindow);
@@ -49,8 +53,8 @@ function opencategorywindowwithanxtoclose(category) {
         const itemImage = document.createElement('img');
         itemImage.classList.add('item-image');
         
-        // Convert item name to filename (e.g., "I love matix fan pen" -> "i-love-matix-fan-pen.png")
-        const imageName = item.toLowerCase().replace(/\s+/g, '-') + '.png';
+        // Convert item name to filename (e.g., "I love matix fan pen" -> "i-love-matix-fan-pen.svg")
+        const imageName = item.toLowerCase().replace(/\s+/g, '-') + '.svg';
         const imageUrl = `images/${imageName}`;
         
         // Set image source with fallback to coming soon SVG
@@ -77,7 +81,7 @@ function opencategorywindowwithanxtoclose(category) {
         
         categoryContent.appendChild(document.createElement('br'));
         itemElement.addEventListener('click', () => {
-            showcustomalert('This item is not available yet!', 'ok');
+            showcustomalert('This item is not available yet!', 'OK');
         });
     });
     
