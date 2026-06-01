@@ -20,10 +20,10 @@
   <circle cx="150" cy="75" r="35" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
   
   <!-- Shadow text for depth -->
-  <text x="152" y="88" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" opacity="0.3">COMING SOON</text>
+  <text x="152" y="88" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" opacity="0.3">COMING SOON</text>
   
   <!-- Main glowing text - centered -->
-  <text x="150" y="86" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" filter="url(#glow)">COMING SOON</text>
+  <text x="150" y="86" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" filter="url(#glow)">COMING SOON</text>
   
   <!-- Top accent line -->
   <line x1="30" y1="28" x2="270" y2="28" stroke="#ffeb3b" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
