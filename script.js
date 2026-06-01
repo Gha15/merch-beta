@@ -53,10 +53,10 @@ function opencategorywindowwithanxtoclose(category) {
         const imageName = item.toLowerCase().replace(/\s+/g, '-') + '.png';
         const imageUrl = `images/${imageName}`;
         
-        // Set image source with fallback to coming soon
+        // Set image source with fallback to coming soon SVG
         itemImage.src = imageUrl;
         itemImage.onerror = function() {
-            this.src = 'images/comingsoon.png';
+            this.src = 'images/comingsoon.svg';
         };
         
         imageContainer.appendChild(itemImage);
