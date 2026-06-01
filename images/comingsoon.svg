@@ -1,0 +1,17 @@
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="300" height="150" fill="#0d0d0d"/>
+  
+  <!-- Glow effect circles -->
+  <circle cx="150" cy="75" r="80" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
+  <circle cx="150" cy="75" r="60" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.15"/>
+  
+  <!-- Main text with shadow -->
+  <text x="150" y="85" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#1a1a1a" opacity="0.5">COMING SOON</text>
+  
+  <!-- Main text in neon yellow -->
+  <text x="150" y="82" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#ffeb3b" letter-spacing="2">COMING SOON</text>
+  
+  <!-- Bottom accent line -->
+  <line x1="80" y1="110" x2="220" y2="110" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
+</svg>
