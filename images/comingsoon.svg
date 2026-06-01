@@ -7,13 +7,13 @@
         font-weight: 400;
         fill: #ffeb3b;
         text-anchor: middle;
-        letter-spacing: 3px;
+        letter-spacing: 4px;
       }
     </style>
-    <!-- Strong glow filter -->
-    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+    <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
       <feMerge>
+        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -21,40 +21,31 @@
     </filter>
   </defs>
   
-  <!-- Dark background -->
   <rect width="300" height="150" fill="#0d0d0d"/>
+  <rect x="5" y="5" width="290" height="140" fill="none" stroke="transparent"/>
   
-  <!-- Extra safe area padding (transparent) -->
-  <rect x="2" y="2" width="296" height="146" fill="none" stroke="transparent"/>
+  <circle cx="150" cy="75" r="110" fill="none" stroke="#ffeb3b" stroke-width="0.5" opacity="0.03"/>
+  <circle cx="150" cy="75" r="90" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.06"/>
+  <circle cx="150" cy="75" r="70" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
+  <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
   
-  <!-- Large glow circles -->
-  <circle cx="150" cy="75" r="100" fill="none" stroke="#ffeb3b" stroke-width="0.5" opacity="0.04"/>
-  <circle cx="150" cy="75" r="80" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.08"/>
-  <circle cx="150" cy="75" r="60" fill="none" stroke="#ffeb3b" stroke-width="1.5" opacity="0.12"/>
-  <circle cx="150" cy="75" r="40" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.2" filter="url(#glow)"/>
+  <text x="152" y="90" class="coming-soon-text" font-size="56" opacity="0.35" letter-spacing="4">COMING SOON</text>
+  <text x="150" y="87" class="coming-soon-text" font-size="56" filter="url(#glow)">COMING SOON</text>
   
-  <!-- Neon shadow for depth -->
-  <text x="151" y="88" class="coming-soon-text" font-size="50" opacity="0.3" letter-spacing="3">COMING SOON</text>
+  <line x1="20" y1="25" x2="280" y2="25" stroke="#ffeb3b" stroke-width="4" opacity="0.8" filter="url(#glow)"/>
+  <line x1="20" y1="125" x2="280" y2="125" stroke="#ffeb3b" stroke-width="4" opacity="0.85" filter="url(#glow)"/>
   
-  <!-- Main neon glowing text -->
-  <text x="150" y="86" class="coming-soon-text" font-size="50" filter="url(#glow)" opacity="0.95">COMING SOON</text>
+  <line x1="8" y1="8" x2="30" y2="8" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <line x1="8" y1="8" x2="8" y2="30" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
   
-  <!-- Top neon accent line -->
-  <line x1="30" y1="30" x2="270" y2="30" stroke="#ffeb3b" stroke-width="3" opacity="0.7" filter="url(#glow)"/>
+  <line x1="292" y1="8" x2="270" y2="8" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <line x1="292" y1="8" x2="292" y2="30" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
   
-  <!-- Bottom neon accent line -->
-  <line x1="30" y1="120" x2="270" y2="120" stroke="#ffeb3b" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+  <line x1="8" y1="142" x2="30" y2="142" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <line x1="8" y1="142" x2="8" y2="120" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
   
-  <!-- Corner geometric elements -->
-  <line x1="10" y1="10" x2="25" y2="10" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  <line x1="10" y1="10" x2="10" y2="25" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
+  <line x1="292" y1="142" x2="270" y2="142" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <line x1="292" y1="142" x2="292" y2="120" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
   
-  <line x1="290" y1="10" x2="275" y2="10" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  <line x1="290" y1="10" x2="290" y2="25" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  
-  <line x1="10" y1="140" x2="25" y2="140" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  <line x1="10" y1="140" x2="10" y2="125" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  
-  <line x1="290" y1="140" x2="275" y2="140" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
-  <line x1="290" y1="140" x2="290" y2="125" stroke="#ffeb3b" stroke-width="2" opacity="0.6"/>
+  <circle cx="150" cy="75" r="3" fill="#ffeb3b" opacity="0.6" filter="url(#glow)"/>
 </svg>
