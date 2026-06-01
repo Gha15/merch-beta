@@ -37,7 +37,6 @@ h1 {
     border-radius: 5px;
     transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
     display: flex;
-    gap: 15px; /* Adjust this value to change the spacing size */
     justify-content: center; /* Centers the buttons horizontally */
 }
 
