@@ -22,21 +22,22 @@ function opencategorywindowwithanxtoclose(category) {
     categoryContenttext2.style.marginTop = '10px';
     categoryContenttext2.style.fontSize = '18px';
     categoryContenttext2.style.fontFamily = 'Vibur, cursive';
-    categoryContenttext2.style.color = '#555';
+    categoryContenttext2.style.color = '#ffeb3b';
     categoryContenttext2.style.textAlign = 'center';
     categoryContenttext2.style.padding = '10px';
-    categoryContenttext2.style.backgroundColor = '#f0f0f0';
+    categoryContenttext2.style.backgroundColor = '#1a1a1a';
     categoryContenttext2.style.borderRadius = '5px';
-    categoryContenttext2.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+    categoryContenttext2.style.border = '1px solid #ffeb3b';
+    categoryContenttext2.style.boxShadow = '0 0 10px rgba(255, 235, 59, 0.15)';
     categoryContenttext2.style.width = '100%';
     categoryContenttext2.style.boxSizing = 'border-box';
     categoryContenttext2.style.marginTop = '20px';
     categoryContenttext2.style.transition = 'background-color 0.3s ease';
     categoryContenttext2.addEventListener('mouseover', () => {
-        categoryContenttext2.style.backgroundColor = '#e0e0e0';
+        categoryContenttext2.style.backgroundColor = '#2a2a2a';
     });
     categoryContenttext2.addEventListener('mouseout', () => {
-        categoryContenttext2.style.backgroundColor = '#f0f0f0';
+        categoryContenttext2.style.backgroundColor = '#1a1a1a';
     });
     categoryContenttext2.style.cursor = 'default';
     categoryContenttext2.style.userSelect = 'none';
@@ -51,22 +52,22 @@ function opencategorywindowwithanxtoclose(category) {
     categoryContent.style.alignItems = 'center';
     categoryContent.style.width = windowwidth;
     categoryContent.style.height = windowheight;
-    categoryWindow.style.border = '2px solid #333';
+    categoryWindow.style.border = '1px solid #ffeb3b';
     categoryContent.style.fontSize = '24px';
     categoryContent.style.fontFamily = 'Vibur, cursive';
     categoryContent.style.textAlign = 'center';
     categoryContent.style.padding = '20px';
-    categoryContent.style.color = '#333';
-    categoryContent.style.backgroundColor = '#f9f9f9';
+    categoryContent.style.color = '#ffffff';
+    categoryContent.style.backgroundColor = '#111111';
     categoryContent.style.flexDirection = 'column';
     categoryWindow.style.position = 'fixed';
     categoryWindow.style.top = '50%';
     categoryWindow.style.left = '50%';
     categoryWindow.style.transform = 'translate(-50%, -50%)';
     categoryWindow.style.padding = '20px';
-    categoryWindow.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    categoryWindow.style.borderRadius = '1px';
-    categoryWindow.style.backgroundColor = '#fff';
+    categoryWindow.style.boxShadow = '0 0 20px rgba(255, 235, 59, 0.15)';
+    categoryWindow.style.borderRadius = '12px';
+    categoryWindow.style.backgroundColor = '#111111';
     categoryWindow.style.zIndex = '1000';
     categoryWindow.style.display = 'flex';
     categoryWindow.style.flexDirection = 'column';
@@ -91,23 +92,25 @@ function opencategorywindowwithanxtoclose(category) {
         categoryContent.appendChild(itemElement);
         categoryContent.appendChild(document.createElement('br'));
         itemElement.style.padding = '10px';
-        itemElement.style.border = '1px solid #ccc';
+        itemElement.style.border = '1px solid #ffeb3b';
         itemElement.style.borderRadius = '5px';
-        itemElement.style.backgroundColor = '#fff';
-        itemElement.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+        itemElement.style.backgroundColor = '#1a1a1a';
+        itemElement.style.boxShadow = '0 0 10px rgba(255, 235, 59, 0.1)';
         itemElement.style.width = '80%';
         itemElement.style.margin = '10px 0';
         itemElement.style.textAlign = 'center';
         itemElement.style.fontSize = '18px';
         itemElement.style.fontFamily = 'Vibur, cursive';
-        itemElement.style.color = '#333';
+        itemElement.style.color = '#ffffff';
         itemElement.style.cursor = 'default';
         itemElement.style.userSelect = 'none';
         itemElement.addEventListener('mouseover', () => {
-            itemElement.style.backgroundColor = '#f0f0f0';
+            itemElement.style.backgroundColor = '#2a2a2a';
+            itemElement.style.color = '#ffeb3b';
         });
         itemElement.addEventListener('mouseout', () => {
-            itemElement.style.backgroundColor = '#fff';
+            itemElement.style.backgroundColor = '#1a1a1a';
+            itemElement.style.color = '#ffffff';
         });
         itemElement.addEventListener('click', () => {
             showcustomalert('This item is not available yet!', 'ok');
@@ -126,7 +129,7 @@ function showcustomalert(message, close_message) {
     alertOverlay.appendChild(alertBox);
     const closeButton = document.createElement('button');
     closeButton.classList.add('alert-close');
-    closeButton.textContent = 'close-message;
+    closeButton.textContent = 'Close';
     alertBox.appendChild(closeButton);
     closeButton.addEventListener('click', () => {
         document.body.removeChild(alertOverlay);
