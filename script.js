@@ -110,13 +110,13 @@ function opencategorywindowwithanxtoclose(category) {
             itemElement.style.backgroundColor = '#fff';
         });
         itemElement.addEventListener('click', () => {
-            showcustomalert('This item is not available yet!', ok);
+            showcustomalert('This item is not available yet!', 'ok');
         });
     });
 }
 
 //custom alert function
-function showcustomalert(message, close-message) {
+function showcustomalert(message, close_message) {
     const alertOverlay = document.createElement('div');
     alertOverlay.classList.add('alert-overlay');
     document.body.appendChild(alertOverlay);
@@ -131,3 +131,4 @@ function showcustomalert(message, close-message) {
     closeButton.addEventListener('click', () => {
         document.body.removeChild(alertOverlay);
     });
+}
