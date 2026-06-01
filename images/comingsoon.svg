@@ -10,31 +10,43 @@
     </filter>
   </defs>
   
+  <!-- Dark background - fills entire viewBox -->
   <rect width="300" height="150" fill="#0d0d0d"/>
-  <rect x="5" y="5" width="290" height="140" fill="none" stroke="transparent"/>
   
-  <circle cx="150" cy="75" r="110" fill="none" stroke="#ffeb3b" stroke-width="0.5" opacity="0.03"/>
-  <circle cx="150" cy="75" r="90" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.06"/>
-  <circle cx="150" cy="75" r="70" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
-  <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
+  <!-- Glow circles - properly scaled -->
+  <circle cx="150" cy="75" r="80" fill="none" stroke="#ffeb3b" stroke-width="0.5" opacity="0.03"/>
+  <circle cx="150" cy="75" r="65" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.06"/>
+  <circle cx="150" cy="75" r="50" fill="none" stroke="#ffeb3b" stroke-width="1" opacity="0.1"/>
+  <circle cx="150" cy="75" r="35" fill="none" stroke="#ffeb3b" stroke-width="2" opacity="0.15" filter="url(#glow)"/>
   
-  <text x="152" y="93" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" opacity="0.35">COMING SOON</text>
-  <text x="150" y="91" font-family="Arial, sans-serif" font-size="35" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="3" filter="url(#glow)">COMING SOON</text>
+  <!-- Shadow text for depth -->
+  <text x="152" y="88" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" opacity="0.3">COMING SOON</text>
   
-  <line x1="20" y1="25" x2="280" y2="25" stroke="#ffeb3b" stroke-width="4" opacity="0.8" filter="url(#glow)"/>
-  <line x1="20" y1="125" x2="280" y2="125" stroke="#ffeb3b" stroke-width="4" opacity="0.85" filter="url(#glow)"/>
+  <!-- Main glowing text - centered -->
+  <text x="150" y="86" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#ffeb3b" text-anchor="middle" letter-spacing="2" filter="url(#glow)">COMING SOON</text>
   
-  <line x1="8" y1="8" x2="30" y2="8" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
-  <line x1="8" y1="8" x2="8" y2="30" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <!-- Top accent line -->
+  <line x1="30" y1="28" x2="270" y2="28" stroke="#ffeb3b" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
   
-  <line x1="292" y1="8" x2="270" y2="8" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
-  <line x1="292" y1="8" x2="292" y2="30" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <!-- Bottom accent line -->
+  <line x1="30" y1="122" x2="270" y2="122" stroke="#ffeb3b" stroke-width="3" opacity="0.85" filter="url(#glow)"/>
   
-  <line x1="8" y1="142" x2="30" y2="142" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
-  <line x1="8" y1="142" x2="8" y2="120" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <!-- Corner brackets - Top Left -->
+  <line x1="15" y1="15" x2="35" y2="15" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  <line x1="15" y1="15" x2="15" y2="35" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
   
-  <line x1="292" y1="142" x2="270" y2="142" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
-  <line x1="292" y1="142" x2="292" y2="120" stroke="#ffeb3b" stroke-width="3" opacity="0.7"/>
+  <!-- Corner brackets - Top Right -->
+  <line x1="285" y1="15" x2="265" y2="15" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  <line x1="285" y1="15" x2="285" y2="35" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
   
-  <circle cx="150" cy="75" r="3" fill="#ffeb3b" opacity="0.6" filter="url(#glow)"/>
+  <!-- Corner brackets - Bottom Left -->
+  <line x1="15" y1="135" x2="35" y2="135" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  <line x1="15" y1="135" x2="15" y2="115" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  
+  <!-- Corner brackets - Bottom Right -->
+  <line x1="285" y1="135" x2="265" y2="135" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  <line x1="285" y1="135" x2="285" y2="115" stroke="#ffeb3b" stroke-width="2.5" opacity="0.7"/>
+  
+  <!-- Center neon dot -->
+  <circle cx="150" cy="75" r="2" fill="#ffeb3b" opacity="0.6" filter="url(#glow)"/>
 </svg>
