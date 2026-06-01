@@ -38,9 +38,36 @@ function opencategorywindowwithanxtoclose(category) {
     //drawing item boxes and adding item names to them
     items.forEach(item => {
         const itemElement = document.createElement('div');
-        itemElement.textContent = item;
         itemElement.classList.add('category-item');
         categoryContent.appendChild(itemElement);
+        
+        // Create image container
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('item-image-container');
+        
+        // Create image element
+        const itemImage = document.createElement('img');
+        itemImage.classList.add('item-image');
+        
+        // Convert item name to filename (e.g., "I love matix fan pen" -> "i-love-matix-fan-pen.png")
+        const imageName = item.toLowerCase().replace(/\s+/g, '-') + '.png';
+        const imageUrl = `images/${imageName}`;
+        
+        // Set image source with fallback to coming soon
+        itemImage.src = imageUrl;
+        itemImage.onerror = function() {
+            this.src = 'images/comingsoon.png';
+        };
+        
+        imageContainer.appendChild(itemImage);
+        itemElement.appendChild(imageContainer);
+        
+        // Create text container
+        const textContainer = document.createElement('div');
+        textContainer.classList.add('item-text-container');
+        textContainer.textContent = item;
+        itemElement.appendChild(textContainer);
+        
         categoryContent.appendChild(document.createElement('br'));
         itemElement.addEventListener('click', () => {
             showcustomalert('This item is not available yet!', 'ok');
