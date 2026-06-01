@@ -36,7 +36,7 @@ h1 {
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-    padding-bottom: 10vh;
+    padding-bottom: 50vh;
 }
 
 .button:hover {
