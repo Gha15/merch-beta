@@ -93,3 +93,26 @@ function showcustomalert(message, close_message) {
         document.body.removeChild(alertOverlay);
     });
 }
+
+// Handle responsive image scaling on window resize
+function updateImageSizes() {
+    const itemImages = document.querySelectorAll('.item-image');
+    const windowWidth = window.innerWidth;
+    
+    itemImages.forEach(img => {
+        if (windowWidth < 600) {
+            // Mobile: smaller images
+            img.style.maxHeight = '80px';
+        } else if (windowWidth < 1024) {
+            // Tablet: medium images
+            img.style.maxHeight = '120px';
+        } else {
+            // Desktop: full size
+            img.style.maxHeight = '150px';
+        }
+    });
+}
+
+// Update on load and resize
+window.addEventListener('load', updateImageSizes);
+window.addEventListener('resize', updateImageSizes);
