@@ -2,9 +2,10 @@ let windowwidth = '0px'
 let windowheight = '0px'
 let items = []
 function opencategorywindowwithanxtoclose(category) {
-    if category === 'pens' {
-    items = ['I love matix fan pen', 'official matix logo pen'];
-    } else if category === 'shirts' {
+    // FIXED: Added parentheses around the conditions
+    if (category === 'pens') {
+        items = ['I love matix fan pen', 'official matix logo pen'];
+    } else if (category === 'shirts') {
         items = ['Matix officil logo shirt', 'math signs shirt', 'multiplication table shirt with matix logo above it']
     }
     const categoryWindow = document.createElement('div');
